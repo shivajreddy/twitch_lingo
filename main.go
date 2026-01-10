@@ -77,9 +77,9 @@ func getTwitchAccessToken() {
 	err = json.NewDecoder(resp.Body).Decode(&tokenResp)
 	logFatalErr(err)
 
-	// fmt.Println("access_token: ", tokenResp.AccessToken)
-	// fmt.Println("expires_in: ", tokenResp.ExpiresIn)
-	// fmt.Println("token_type: ", tokenResp.TokenType)
+	fmt.Println("access_token:", tokenResp.AccessToken)
+	fmt.Println("expires_in:", tokenResp.ExpiresIn)
+	fmt.Println("token_type:", tokenResp.TokenType)
 	TWITCH_ACCESS_TOKEN = tokenResp.AccessToken
 }
 
@@ -209,11 +209,10 @@ func main() {
 
 	loadEnvFile()
 
-	getToken2()
+	// getToken2()
 
 	// getTwitchAccessToken()
 	// makeTwitchCall()
 
 	// readTwitchChat()
-
 }
